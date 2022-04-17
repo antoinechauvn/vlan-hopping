@@ -35,7 +35,7 @@ La technique de Switch Spoofing n'est exploitable que lorsque les interfaces d'u
 La première chose à faire est de désactiver le DTP<br>
 `switchport nonegotiate`
 
-Ensuite, il faut s'assurer que les ports non configurés en jonction sont configurés en port d'accès<br>
+Ensuite, il faut s'assurer que les ports non configurés en trunk sont configurés en port d'accès<br>
 `switchport mode access`
 
 ## Double-Tagging
