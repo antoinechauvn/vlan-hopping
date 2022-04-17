@@ -36,3 +36,22 @@ Une attaque par saut de VLAN double-tagging se déroule en trois étapes :
 Ce type d'attaque est unidirectionnel et ne fonctionne que si le pirate est connecté à un port se trouvant dans le même VLAN que le VLAN natif du port trunk. Ce type d'attaque est plus difficile à contrer que les simples attaques par saut de VLAN.
 
 Le meilleur moyen pour repousser les attaques de double-tagging consiste à s'assurer que le VLAN natif des ports trunk est différent du VLAN de tous les ports utilisateur. En réalité, il est recommandé d'utiliser un VLAN fixe différent de tous les VLAN utilisateur du réseau commuté en tant que VLAN natif pour toutes les trunks 802.1Q.
+
+Double Tagging
+Cette attaque consiste à encapsuler deux champs VLAN dans les trames envoyés. Pour explopiter cette technique, il est nécessaire d'être connecté à un port compatible 802.1Q.
+
+Voici le déroulé de cette attaque :
+
+On envoie d'une trame avec deux champs VLAN encapsulés (le premier correspond au VLAN auquel on a accès et le second celui que l'on souhaite atteindre)
+La trame est transmise sans la première balise car il s'agit du VLAN natif d'une interface de jonction (mode trunk)
+La deuxième balise est alors visible par le deuxième switch que la trame rencontre
+Cette deuxième balise VLAN indique que la trame est destinée à un hôte cible sur un deuxième switch
+La trame est ensuite envoyée à l'hôte cible comme si elle provenait du VLAN cible, contournant efficacement les mécanismes de réseau qui isolent logiquement les VLAN les uns des autres
+Remédiations
+La technique de Double Tagging n'est exploitable que sur les ports de switch configurés pour utiliser des VLAN natifs.
+
+Il est important de ne pas utiliser le VLAN par défaut (VLAN 1) : switchport access vlan 2
+
+Vous pouvez aussi remplacer le VLAN natif de tous les ports en mode trunk par un ID de VLAN inutilisé : switchport trunk native vlan 999
+
+Vous pouvez également forcer le marquage explicite du VLAN natif sur tous les ports en mode trunk : vlan dot1q tag native
