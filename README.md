@@ -10,8 +10,8 @@ Le concept de base derrière toutes les attaques par saut de VLAN est qu'un hôt
 ## Switch spoofing
 
 ```
-L'usurpation de commutateur est un type d'attaque par saut de VLAN tirant parti d'un port trunk configuré de
-manière incorrecte. Par défaut, les ports trunk ont accès à tous les VLAN et acheminent le trafic de
+L'usurpation de commutateur est un type d'attaque par saut de VLAN tirant parti d'un port trunk configuré
+de manière incorrecte. Par défaut, les ports trunk ont accès à tous les VLAN et acheminent le trafic de
 plusieurs VLAN sur la même liaison physique, généralement entre des commutateurs. Dans une attaque de base
 d'usurpation de commutateur, le pirate tire parti du fait que la configuration par défaut du port du
 commutateur est dynamique automatique. Il configure un système afin de se faire passer pour un commutateur.
