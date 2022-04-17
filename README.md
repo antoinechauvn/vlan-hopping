@@ -1,0 +1,1 @@
+Il existe deux méthodes principales de saut de VLAN : l'usurpation de commutateur et le double marquage . Les deux vecteurs d'attaque peuvent être atténués avec une configuration de port de commutateur appropriée.
