@@ -4,6 +4,12 @@ Dans la figure, cliquez sur le bouton Lecture pour voir l'animation illustrant u
 
 Dans une attaque de base d'usurpation de commutateur, le pirate tire parti du fait que la configuration par défaut du port du commutateur est dynamique automatique. Il configure un système afin de se faire passer pour un commutateur. Cette usurpation exige que le pirate soit capable d'émuler 802.1Q et les messages DTP. En amenant un commutateur à penser qu'un autre commutateur tente de former un trunk, un pirate peut accéder à tous les VLAN autorisés sur le port trunk.
 
+Voici le déroulé de cette attaque :
+
+On commence par envoyer des trames DTP sur un port Access
+Si le mode DTP est en DYNAMIC AUTO ou DYNAMIC DESIRABLE alors l'attaque est possible
+On envoie une demande de négociation pour basculer le lien en mode trunk
+
 Le meilleur moyen d'éviter une attaque de base d'usurpation de commutateur est de désactiver le trunking sur tous les ports, excepté ceux qui le requièrent spécifiquement. Sur les ports de trunking requis, désactivez DTP, puis activez manuellement le trunk.
 
 
