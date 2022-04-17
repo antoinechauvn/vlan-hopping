@@ -10,7 +10,12 @@ On commence par envoyer des trames DTP sur un port Access
 Si le mode DTP est en DYNAMIC AUTO ou DYNAMIC DESIRABLE alors l'attaque est possible
 On envoie une demande de négociation pour basculer le lien en mode trunk
 
-Le meilleur moyen d'éviter une attaque de base d'usurpation de commutateur est de désactiver le trunking sur tous les ports, excepté ceux qui le requièrent spécifiquement. Sur les ports de trunking requis, désactivez DTP, puis activez manuellement le trunk.
+Remédiations
+La technique de Switch Spoofing n'est exploitable que lorsque les interfaces d'un switch sont configurés pour négocier une jonction.
+
+La première chose à faire est de désactiver le DTP : switchport nonegotiate
+
+Ensuite, il faut s'assurer que les ports non configurés en jonction sont configurés en port d'accès : switchport mode access
 
 
 ![Capture d’écran 2022-04-17 114556](https://user-images.githubusercontent.com/83721477/163709246-3e6972e8-23dd-4725-9d61-8efb7976454a.png)
