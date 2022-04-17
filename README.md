@@ -46,7 +46,9 @@ Une attaque par saut de VLAN double-tagging se déroule en trois étapes :
 La technique de Double Tagging n'est exploitable que sur les ports de switch configurés pour utiliser des VLAN natifs.<br>
 Il est important de ne pas utiliser le VLAN par défaut (VLAN 1)<br>
 `switchport access vlan 2`
+
 Vous pouvez aussi remplacer le VLAN natif de tous les ports en mode trunk par un ID de VLAN inutilisé<br>
 `switchport trunk native vlan 999`
+
 Vous pouvez également forcer le marquage explicite du VLAN natif sur tous les ports en mode trunk<br>
 `vlan dot1q tag native`
