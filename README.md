@@ -16,8 +16,8 @@ plusieurs VLAN sur la même liaison physique, généralement entre des commutate
 d'usurpation de commutateur, le pirate tire parti du fait que la configuration par défaut du port du
 commutateur est dynamique automatique. Il configure un système afin de se faire passer pour un commutateur.
 Cette usurpation exige que le pirate soit capable d'émuler 802.1Q et les messages DTP. En amenant un
-commutateur à penser qu'un autre commutateur tente de former un trunk, un pirate peut accéder à tous les VLAN
-autorisés sur le port trunk
+commutateur à penser qu'un autre commutateur tente de former un trunk, un pirate peut accéder à tous les
+VLAN autorisés sur le port trunk
 ```
 
 1. On commence par envoyer des trames DTP sur un port Access
