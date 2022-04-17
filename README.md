@@ -32,11 +32,14 @@ ___
 ### Remédiations
 La technique de Switch Spoofing n'est exploitable que lorsque les interfaces d'un switch sont configurés pour négocier une jonction (trunk).
 
-La première chose à faire est de désactiver le DTP<br>
+* Ne configurez aucun port avec l'un des modes suivants : `dynamic desirable`, `dynamic auto` ou `trunk`<br>
+* Définissez manuellement la configuration de tous les ports de jonction (trunk) et désactivez DTP.<br>
+`switchport mode trunk`<br>
 `switchport nonegotiate`
 
-Ensuite, il faut s'assurer que les ports non configurés en trunk sont configurés en port d'accès<br>
-`switchport mode access`
+* Ensuite, il faut s'assurer que les ports non configurés en trunk sont configurés en port d'accès (toujours sans DTP)<br>
+`switchport mode access`<br>
+`switchport nonegotiate`
 
 ## Double-Tagging
 
@@ -66,11 +69,11 @@ ___
 ### Remédiations
 
 La technique de Double Tagging n'est exploitable que sur les ports de switch configurés pour utiliser des VLAN natifs.<br>
-Il est important de ne pas utiliser le VLAN par défaut (VLAN 1)<br>
+* Il est important de ne pas utiliser le VLAN par défaut (VLAN 1)<br>
 `switchport access vlan 2`
 
-Vous pouvez aussi remplacer le VLAN natif de tous les ports en mode trunk par un ID de VLAN inutilisé<br>
+* Remplacez le VLAN natif de tous les ports en mode trunk par un ID de VLAN inutilisé<br>
 `switchport trunk native vlan 999`
 
-Vous pouvez également forcer le marquage explicite du VLAN natif sur tous les ports en mode trunk<br>
+* Vous pouvez également forcer le marquage explicite du VLAN natif sur tous les ports en mode trunk<br>
 `vlan dot1q tag native`
