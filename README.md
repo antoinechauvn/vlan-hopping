@@ -47,6 +47,10 @@ que le tag 802.1Q d'origine n'a pas spécifié. Il est important de noter que l'
 double encapsulation fonctionne même si les ports trunk sont désactivés, car un hôte envoie généralement
 une trame sur un segment qui n'est pas une liaison trunk.
 ```
+![DOUBLE-TAGGING1](https://user-images.githubusercontent.com/83721477/163726501-e83d0cf9-9498-4e44-a0c1-e65f143748ac.png)
+![DOUBLE-TAGGING2](https://user-images.githubusercontent.com/83721477/163726708-1e2ad643-6e2f-41dc-a896-5f1d29d3d786.png)
+![DOUBLE-TAGGING3](https://user-images.githubusercontent.com/83721477/163726750-a8888e07-da47-4653-ba69-071530a256e1.png)
+![DOUBLE-TAGGING4](https://user-images.githubusercontent.com/83721477/163726808-3f579887-4a35-4b3a-850b-d104994fc5d5.png)
 
 1. Le pirate envoie une trame 802.1Q marquée de deux étiquettes au commutateur. L'en-tête externe porte l'étiquette VLAN du pirate, qui est identique au VLAN natif du port trunk. Supposons que le commutateur traite la trame envoyée par le pirate comme si elle se trouvait sur un port trunk ou un port disposant d'un VLAN voix (un commutateur ne doit pas recevoir de trame Ethernet étiquetée sur un port d'accès). Dans cet exemple, supposons que le VLAN natif est le VLAN 10. L'étiquette interne est le VLAN victime ; dans ce cas, il s'agit du VLAN 20.
 2. La trame arrive sur le commutateur, qui vérifie la première étiquette 802.1Q de 4 octets. Le commutateur détecte que la trame est destinée au VLAN 10, qui est le VLAN natif. Le commutateur transfère le paquet par tous les ports du VLAN 10 après avoir éliminé l'étiquette du VLAN 10. Sur le port trunk, l'étiquette du VLAN 10 est éliminée et le paquet n'est pas balisé de nouveau, car il fait partie du VLAN natif. À ce stade, l'étiquette du VLAN 20 reste inchangée et n'a pas été inspectée par le premier commutateur.
