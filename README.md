@@ -19,6 +19,9 @@ Cette usurpation exige que le pirate soit capable d'émuler 802.1Q et les messag
 commutateur à penser qu'un autre commutateur tente de former un trunk, un pirate peut accéder à tous les
 VLAN autorisés sur le port trunk
 ```
+![VLAN-SPOOF1](https://user-images.githubusercontent.com/83721477/163724494-9164b7ba-1691-4dd0-9bb6-a0517308f385.png)
+![VLAN-SPOOF2](https://user-images.githubusercontent.com/83721477/163724627-cc972305-bf52-4102-bcdf-ff0b2532d6a2.png)
+![VLAN-SPOOF3](https://user-images.githubusercontent.com/83721477/163724759-5c1c153e-a023-4428-b726-2eab1405165d.png)
 
 1. On commence par envoyer des trames DTP sur un port Access
 2. Si le mode DTP est en DYNAMIC AUTO ou DYNAMIC DESIRABLE alors l'attaque est possible
