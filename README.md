@@ -25,7 +25,7 @@ ___
 ___
 ![VLAN-SPOOF3](https://user-images.githubusercontent.com/83721477/163724759-5c1c153e-a023-4428-b726-2eab1405165d.png)
 
-1. On commence par envoyer des trames DTP sur un port Access
+1. On commence par envoyer des trames DTP
 2. Si le mode DTP est en DYNAMIC AUTO ou DYNAMIC DESIRABLE alors l'attaque est possible
 3. On envoie une demande de négociation pour basculer le lien en mode trunk
 
