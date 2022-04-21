@@ -30,8 +30,6 @@ ___
 3. On envoie une demande de négociation pour basculer le lien en mode trunk
 
 ### Remédiations
-La technique de Switch Spoofing n'est exploitable que lorsque les interfaces d'un switch sont configurés pour négocier une jonction (trunk).
-
 * Ne configurez aucun port avec l'un des modes suivants : `dynamic desirable`, `dynamic auto` ou `trunk`<br>
 * Définissez manuellement la configuration de tous les ports de jonction (trunk) et désactivez DTP.<br>
 `switchport mode trunk`<br>
